@@ -6,12 +6,10 @@ export default function BeaniesList({ beanieBabies }) {
     <div className='beanies'>
       {/* render out the beanie babies as a list */}
       {
-        beanieBabies.map((item, i) => <Link key={item.title + i} to={`/beanie-babies/${item.id}`}>
-          <div className='baby'>
-            {item.title}
-            <img src={item.image} />
-          </div>
-        </Link>)
+        beanieBabies.map(item => <BeanieBaby 
+          key={item.id}
+          item={item}
+        />)
       }
     </div>);
 }
