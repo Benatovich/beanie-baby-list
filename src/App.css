@@ -15,11 +15,7 @@ body {
 
 .beanie-baby {
   margin: 20px;
-  /* border: solid black 1px; */
-}
-
-a {
-  margin: 20px;
+  padding: 10px;
   width: 220px;
   /* display: flex;
   flex-direction: column; */
