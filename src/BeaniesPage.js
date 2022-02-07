@@ -6,7 +6,7 @@ import BeaniesList from './BeaniesList';
 function App() {
   const [beanieBabies, setBeanieBabies] = useState([]);
   const [page, setPage] = useState(1);
-  const perPage = 40;
+  const perPage = 19;
   
   useEffect(() => {
     async function fetch() {
