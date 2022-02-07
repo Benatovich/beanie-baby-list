@@ -35,7 +35,7 @@ function App() {
           disabled={beanieBabies.length < perPage} >Next Page</button>
       </div>
       {/* pass the beanie babies into the BeaniesList component */}
-      <BeaniesList />
+      <BeaniesList beanieBabies={beanieBabies}/>
     </>
   );
 }
