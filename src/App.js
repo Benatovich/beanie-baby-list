@@ -17,7 +17,7 @@ export default function App() {
             <Link to="/">Home</Link>
           </li>
           <li>
-            <Link to="/beanie-babies">Search</Link>
+            <Link to="/beanie-babies/:id">Search</Link>
           </li>
         </ul>
         <Switch>

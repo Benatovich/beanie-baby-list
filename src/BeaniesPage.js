@@ -7,21 +7,26 @@ function App() {
   const [beanieBabies, setBeanieBabies] = useState([]);
   const [page, setPage] = useState(1);
   const perPage = 19;
+  const [searchQuery, setSearchQuery] = useState('');
   
   useEffect(() => {
     async function fetch() {
       const from = page * perPage - perPage;
       const to = page * perPage;
-      const beanies = await getBeanieBabies(from, to);
+      const beanies = await getBeanieBabies(from, to, searchQuery);
 
       setBeanieBabies(beanies);
     }
 
     fetch();
-  }, [page]); // what can you do with this array to trigger a fetch every time the page changes?
+  }, [page, searchQuery]); // what can you do with this array to trigger a fetch every time the page changes?
 
   return (
     <>
+      <h2>Search</h2>
+
+      <input placeholder='type here' onChange={(e) => setSearchQuery(e.target.value)}/>
+
       <h2>Current Page: {page}</h2>
       <div className='buttons'>
         {/* on click, this button should decrement the page in state  */}
