@@ -7,21 +7,37 @@ function App() {
   const [beanieBabies, setBeanieBabies] = useState([]);
   const [page, setPage] = useState(1);
   const perPage = 19;
+  // const [filteredBabies, setFilteredBabies] = useState([]);
+  const [searchQuery, setSearchQuery] = useState('');
   
   useEffect(() => {
     async function fetch() {
       const from = page * perPage - perPage;
       const to = page * perPage;
-      const beanies = await getBeanieBabies(from, to);
+      const beanies = await getBeanieBabies(from, to, searchQuery);
 
       setBeanieBabies(beanies);
     }
 
     fetch();
-  }, [page]); // what can you do with this array to trigger a fetch every time the page changes?
+  }, [page, searchQuery]); // what can you do with this array to trigger a fetch every time the page changes?
+
+  // function filterBeanieBabies(filter) {
+  //   const fewerBabies = beanieBabies.filter(beanieBaby => beanieBaby.title.includes(filter));
+
+  //   filter ? setFilteredBabies(fewerBabies) : setFilteredBabies(beanieBabies);
+  // }
 
   return (
     <>
+      <h2>Search</h2>
+
+      <input placeholder='type here' onChange={(e) => setSearchQuery(e.target.value)}/>
+      {/* <div className='filter'>
+        Filter Beanie Babies: <br></br>
+        <input onChange={(e) => filterBeanieBabies(e.target.value)} />
+      </div> */}
+
       <h2>Current Page: {page}</h2>
       <div className='buttons'>
         {/* on click, this button should decrement the page in state  */}
@@ -36,6 +52,7 @@ function App() {
       </div>
       {/* pass the beanie babies into the BeaniesList component */}
       <BeaniesList beanieBabies={beanieBabies}/>
+      {/* <BeaniesList beanieBabies={filteredBabies.length ? filteredBabies : beanieBabies}/> */}
     </>
   );
 }

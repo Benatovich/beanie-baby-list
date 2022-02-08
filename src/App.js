@@ -12,14 +12,7 @@ export default function App() {
   return (
     <Router>
       <div className='App'>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/beanie-babies">Search</Link>
-          </li>
-        </ul>
+        <Link className='home-button' to="/">Home</Link>
         <Switch>
           {/* <Route exact path="/">
             <Home />

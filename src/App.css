@@ -3,6 +3,10 @@ body {
  background-size: 30%;
 }
 
+.home-button {
+  margin-top: 20px;
+}
+
 .App {
   width: 80%;
   margin: 0 auto;
