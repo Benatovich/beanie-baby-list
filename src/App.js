@@ -13,14 +13,14 @@ export default function App() {
   return (
     <Router>
       <div className='App'>
-        {/* <ul>
+        <ul>
           <li>
             <Link to="/">Home</Link>
           </li>
           <li>
             <Link to="/beanie-babies">Search</Link>
           </li>
-        </ul> */}
+        </ul>
         <Switch>
           {/* <Route exact path="/">
             <Home />
